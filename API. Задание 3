@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Поиск по блогам</title>
+<SCRIPT type="text/javascript">
+
+function GoSearch() {
+var text_ = document.formsearch.text_.value;
+var search_ter = document.formsearch.search_ter.value;
+var link_ = document.formsearch.link_.value;
+
+if (search_ter == 'blog'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=blog&link="+link_;}
+
+else if (search_ter == 'popular'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=popular&link="+link_;}
+
+else if (search_ter == 'community'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=community&link="+link_;}
+
+else if (search_ter == 'personal'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=personal&link="+link_;}
+
+else if (search_ter == 'comments'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=comments&link="+link_;}
+
+else if (search_ter == 'forum'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=forum&link="+link_;}
+
+else if (search_ter == 'all'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=all&link="+link_;}
+
+else {
+alert("Данный параметр области поиска не найден")
+}
+
+
+location.href = FullSearchUrl;
+}
+
+</SCRIPT>
+</head>
+<body>
+<FORM NAME ="formsearch" action ="">
+
+Поиск по блогам  :<br>
+<br>Текст для поиска : <INPUT TYPE ="text" NAME ="text_" SIZE ="40"><br>
+<br>Область поиска :   <INPUT TYPE ="text" NAME ="search_ter" SIZE ="40"><br>
+<br>Ссылка : <INPUT TYPE ="text" NAME ="link_" SIZE ="40"><br>
+<br>
+<INPUT TYPE ="button" VALUE ="Искать" onClick="GoSearch()">
+
+</FORM>
+</body>
+</html>
