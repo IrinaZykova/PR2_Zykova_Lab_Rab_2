@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Поиск по блогам</title>
+
+<SCRIPT type="text/javascript">
+
+	function GoSearch() {
+	
+var text_ = document.formsearch.text_.value;
+var search_ter = document.formsearch.search_ter.value;
+var gender_ = document.formsearch.gender_.value;
+var age_from = document.formsearch.age_from.value;
+var age_to = document.formsearch.age_to.value;
+var geo_ = document.formsearch.geo_.value;
+
+	if (search_ter == 'blog'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=blog&age_from="+age_from +"&age_to="+ age_to +"&geo=" + geo_+"&gender=" + gender_;}
+
+	else if (search_ter == 'popular'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=popular&age_from=" + age_from + "&age_to="+age_to +"&geo=" + geo_+"&gender=" + gender_;}
+
+	else if (search_ter == 'community'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=community&age_from="+age_from+"&age_to="+age_to+"&geo=" + geo_+"&gender=" + gender_;}
+
+	else if (search_ter == 'personal'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=personal&age_from="+age_from+"&age_to="+age_to+"&geo=" + geo_+"&gender=" + gender_;}
+
+	else if (search_ter == 'comments'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=comments&age_from="+age_from+"&age_to="+age_to+"&geo=" + geo_+"&&gender=" + gender_;}
+
+	else if (search_ter == 'forum'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=forum&age_from="+age_from+"&age_to="+age_to+"&geo=" + geo_+"&gender=" + gender_;}
+
+	else if (search_ter == 'all'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=all&age_from="+age_from+"&age_to="+age_to+"&geo=" + geo_+ "&gender=" + gender_;}
+
+	else {
+alert("Данный параметр области поиска не найден")}
+
+
+location.href = FullSearchUrl;
+}
+
+</SCRIPT>
+</head>
+<body>
+<FORM NAME ="formsearch" action ="">
+
+Поиск по блогам  : 
+<br>
+<br>Текст для поиска : <INPUT TYPE ="text" NAME ="text_" SIZE ="40"><br>
+<br>Область поиска :   <INPUT TYPE ="text" NAME ="search_ter" SIZE ="40"><br>
+<br>Возрастные рамки:<br>
+<br>От : <INPUT TYPE ="text" NAME ="age_from" SIZE ="40"><br>
+<br>До : <INPUT TYPE ="text" NAME ="age_to" SIZE ="40"><br>
+<br>Местоположение : <INPUT TYPE ="text" NAME ="geo_" SIZE ="40"><br>
+<br>Пол автора (male - мужской, female - женский) : <INPUT TYPE ="text" NAME ="gender_" SIZE ="40"><br>
+<br><INPUT TYPE ="button" VALUE ="Искать" onClick="GoSearch()">
+
+</FORM>
+</body>
+</html>
