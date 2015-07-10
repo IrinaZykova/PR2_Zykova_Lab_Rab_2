@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Поиск по блогам</title>
+
+<SCRIPT type="text/javascript">
+
+function GoSearch() {
+
+var text_ = document.formsearch.text_.value;
+var search_ter = document.formsearch.search_ter.value;
+var from_day  = document.formsearch.from_day.value;
+var from_month  = document.formsearch.from_month.value;
+var from_year  = document.formsearch.from_year.value;
+var to_day  = document.formsearch.to_day.value;
+var to_month  = document.formsearch.to_month.value;
+var to_year  = document.formsearch.to_year.value;
+
+if (search_ter == 'blog'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=blog&from_day=" + from_day + "&from_month=" + from_month + "&from_year=" + from_year + "&to_day=" + to_day + "&to_month=" + to_month + "&to_year=" + to_year;}
+
+else if (search_ter == 'popular'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=popular&from_day=" + from_day + "&from_month=" + from_month + "&from_year=" + from_year + "&to_day=" + to_day + "&to_month=" + to_month + "&to_year=" + to_year;}
+
+else if (search_ter == 'community'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=community&from_day=" + from_day + "&from_month=" + from_month + "&from_year=" + from_year + "&to_day=" + to_day + "&to_month=" + to_month + "&to_year=" + to_year;}
+
+else if (search_ter == 'personal'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=personal&from_day=" + from_day + "&from_month=" + from_month + "&from_year=" + from_year + "&to_day=" + to_day + "&to_month=" + to_month + "&to_year=" + to_year;}
+
+else if (search_ter == 'comments'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=comments&from_day=" + from_day + "&from_month=" + from_month + "&from_year=" + from_year + "&to_day=" + to_day + "&to_month=" + to_month + "&to_year=" + to_year;}
+
+else if (search_ter == 'forum'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=forum&from_day=" + from_day + "&from_month=" + from_month + "&from_year=" + from_year + "&to_day=" + to_day + "&to_month=" + to_month + "&to_year=" + to_year;}
+
+else if (search_ter == 'all'){
+var FullSearchUrl = "http://blogs.yandex.ru/search.rss?text="+ text_+"&ft=all&from_day=" + from_day + "&from_month=" + from_month + "&from_year=" + from_year + "&to_day=" + to_day + "&to_month=" + to_month + "&to_year=" + to_year;}
+
+else {
+alert("Данный параметр области поиска не найден")
+}
+
+
+location.href = FullSearchUrl;
+}
+
+</SCRIPT>
+</head>
+<body>
+<FORM NAME ="formsearch" action ="">
+
+Поиск по блогам  : 
+<br>
+<br>Текст для поиска : <INPUT TYPE ="text" NAME ="text_" SIZE ="40"><br>
+<br>Область поиска :   <INPUT TYPE ="text" NAME ="search_ter" SIZE ="40"><br>
+<br>Временные рамка поиска :
+<br>День начала : <INPUT TYPE ="text" NAME ="from_day" SIZE ="40"><br>
+<br>Месяц начала : <INPUT TYPE ="text" NAME ="from_month" SIZE ="40"><br>
+<br>Год начала : <INPUT TYPE ="text" NAME ="from_year" SIZE ="40"><br>
+<br>День окончания : <INPUT TYPE ="text" NAME ="to_day" SIZE ="40"><br>
+<br>месяц окончания : <INPUT TYPE ="text" NAME ="to_month" SIZE ="40"><br>
+<br>Год окончания : <INPUT TYPE ="text" NAME ="to_year" SIZE ="40"><br>
+<br>
+
+<INPUT TYPE ="button" VALUE ="Искать" onClick="GoSearch()">
+
+</FORM>
+</body>
+</html>
